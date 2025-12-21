@@ -1,0 +1,6 @@
+.env
+/api_keys
+*.db
+/database
+/all_lessons
+/__pycache__
