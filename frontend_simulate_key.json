@@ -1,12 +1,7 @@
 {
   "user_1": {
-    "userId": "student_simulation_01",
+    "userId": "student_simulation_02",
     "username": "SimulationStudent",
     "token": "remember_token=6|c36e1453e254f899c9d50024b94abfed26aaf18843d3c9bd95636be2aeb0722e9285949770949f27738187a4bc9240acc4a1c954e3e74aa41bcb4486450d7a8b; session=.eJwlzjEOwzAIQNG7eO4A2ICdy0TYgNo1aaaqd2-kzv8P71P2POJ8lu19XPEo-8vLVsZiRRTRWi0bmcxcA3J6TDIaykgIGlbddCYPCoc2TQAkma2OJRg1cGayoXLvi4B6EGRb922Qir2FLnZXadJq3L3XIQHDe7kh1xnHXyPl-wO7MC7j.aSW89A.xgstjde-aJrim1JEQbEO8WcY9Aw"
-  },
-  "user_2": {
-    "userId": "student_simulation_02",
-    "username": "NewbieStudent",
-    "token": "BEARER_TOKEN_OR_COOKIE_HERE"
   }
 }

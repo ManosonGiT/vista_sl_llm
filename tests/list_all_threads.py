@@ -2,20 +2,22 @@ import requests
 import json
 import os
 import traceback
-
+from dotenv import load_dotenv
+load_dotenv()
 # --- CONFIGURATION ---
 BASE_URL = "https://vistachatbot.hmu.gr"
 WORKSPACE_SLUG = "vista-sl_temp"
-KEY_FILE = "api_keys/api_key.json"
+KEY_FILE = os.getenv("ANYTHING_LLM_KEY")
 
 def load_api_key():
-    if not os.path.exists(KEY_FILE):
-        print(f"❌ Error: {KEY_FILE} not found.")
+    
+    if not KEY_FILE:
+        print("❌ Error: ANYTHING_LLM_KEY not found in environment.")
         return None
-    with open(KEY_FILE, 'r') as f:
-        data = json.load(f)
-        raw_key = data.get("api_key", "").strip()
-        return f"Bearer {raw_key}" if "Bearer" not in raw_key else raw_key
+    
+    raw_key = KEY_FILE.strip()
+    return raw_key if raw_key.startswith("Bearer ") else f"Bearer {raw_key}"
+
 
 def list_workspace_threads(api_key):
     url = f"{BASE_URL}/api/v1/workspace/{WORKSPACE_SLUG}"

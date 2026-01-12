@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  vista-backend:
+    build: .
+    container_name: vista_middleware
+    restart: always
+    ports:
+      - "8000:8000" # This will be the port that we can acess our script
+    environment:
+      - DATABASE_URL=postgresql://lionakis:TempPass@db:5432/vista_db
+      - PLATFORM_URL=https://vistasl.eelvex.net
+      - ANYTHING_LLM_URL=${https://vistachatbot.hmu.gr}
+      - ANYTHING_LLM_KEY=${D1AV3K8-9QR4AQ2-QTC87F4-2H2QWSF}
+      - WORKSPACE_SLUG=${vista-sl_temp}
+    depends_on:
+      - db
+# 2. The PostgreSQL Database
+  db:
+    image: postgres:15-alpine
+    container_name: vista_db
+    restart: always
+    environment:
+      POSTGRES_USER: lionakis
+      POSTGRES_PASSWORD: TempPass
+      POSTGRES_DB: vista_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

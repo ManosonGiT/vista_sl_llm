@@ -1,103 +1,88 @@
+import requests
 import json
 import os
 import sys
-import time
 
-# Import our modular helpers
-import llm_service
-from database import db_manager
-import platform_connector  # <--- NEW IMPORT
-
-# Config
-SIMULATION_FILE = "frontend_simulate_key.json"
+# CONFIGURATION
+SERVER_URL = "http://localhost:8000/chat"
+CREDENTIALS_FILE = "frontend_simulate_key.json"
 
 def run_simulation(user_key="user_1"):
-    # 1. Load User Credentials
-    if not os.path.exists(SIMULATION_FILE):
-        print(f"❌ {SIMULATION_FILE} missing.")
+    # 1. Load Credentials
+    if not os.path.exists(CREDENTIALS_FILE):
+        print(f"Error: {CREDENTIALS_FILE} not found.")
         return
 
-    with open(SIMULATION_FILE, 'r') as f:
-        users = json.load(f)
-        current_user = users.get(user_key)
+    with open(CREDENTIALS_FILE, 'r') as f:
+        data = json.load(f)
+        user_data = data.get(user_key)
     
-    if not current_user:
-        print(f"❌ User key '{user_key}' not found in JSON.")
+    if not user_data:
+        print(f"❌ Error: User '{user_key}' not found in JSON.")
         return
 
-    user_id = current_user['userId']
-    user_token = current_user['token']
-    
-    print(f"\n🔑 LOGGED IN AS: {current_user['username']} ({user_id})")
-    
-    # 2. RAG: Fetch Platform Data
-    print("-" * 50)
-    print("🧠 RAG SYSTEM: Gathering Context...")
-    rag_context = platform_connector.get_rag_context(user_token)
-    print("✅ Context Loaded into Memory.")
-    print("-" * 50)
+    print(f"\n🔑 LOGGED IN AS: {user_data['username']} ({user_data['userId']})")
+    print(f"📡 CONNECTING TO: {SERVER_URL}")
 
-    # 3. Initialize DB & Get Thread
-    db_manager.init_db()
-    slug = db_manager.get_thread_slug(user_id)
-    
-    if slug:
-        print(f"📂 Found existing thread: {slug}")
-    else:
-        print("🆕 First time user! Creating new thread...")
-        slug = llm_service.create_thread(user_id)
-        if slug:
-            db_manager.save_thread_slug(user_id, slug)
-            print(f"✅ Created and Saved Thread: {slug}")
-        else:
-            print("❌ Failed to create thread.")
-            return
-
-    # 4. SHOW CONTEXT (Chat History)
-    print("\n" + "="*50)
-    print("📜 CHAT HISTORY")
-    print("="*50)
-    
-    history = llm_service.fetch_chat_history(slug)
-    if not history:
-        print("(No previous messages)")
-    else:
-        for msg in history:
-            role = msg.get('role', 'unknown').upper()
-            content = msg.get('content') or msg.get('message')
-            print(f"[{role}]: {content}")
-    
-    print("="*50 + "\n")
-
-    # 5. SEND NEW MESSAGE
+    # 2. Get User Input
     try:
-        user_input = input("💬 Enter your message: ")
+        user_input = input("\n💬 Enter your message: ")
     except KeyboardInterrupt:
         print("\n👋 Exiting.")
         return
-    
-    # --- INJECT RAG CONTEXT ---
-    # We prepend the RAG context to the user's message invisibly.
-    # The AI sees the context, but the user only typed "Help me".
-    final_prompt = f"{rag_context}\n\nUSER MESSAGE:\n{user_input}"
-    
+
+    # 3. Construct Payload (The exact JSON the backend expects)
+    payload = {
+        "userId": user_data['userId'],
+        "token": user_data['token'],
+        "message": user_input
+    }
+
     print("\n🤖 Assistant is typing...", end="", flush=True)
-    print("\r" + " "*30 + "\r🤖 Assistant: ", end="", flush=True)
 
-    # 6. STREAM RESPONSE
-    token_count = 0
-    # Note: We send 'final_prompt' to the LLM, but the user feels like they sent 'user_input'
-    for chunk in llm_service.stream_chat(slug, final_prompt):
-        token_count += 1
-        sys.stdout.write(chunk)
-        sys.stdout.flush()
+    # 4. Send Request & Stream Response
+    try:
+        # stream=True is critical for SSE
+        with requests.post(SERVER_URL, json=payload, stream=True, timeout=30) as response:
+            
+            # Clear the "typing..." line
+            print("\r" + " "*30 + "\r🤖 Assistant: ", end="", flush=True)
+            
+            if response.status_code != 200:
+                print(f"❌ Server Error {response.status_code}: {response.text}")
+                return
 
-    if token_count == 0:
-        print("(No response received. Check API logs.)")
-    
+            # 5. Parse Server-Sent Events (SSE)
+            # Format is: data: {"token": "hello"}\n\n
+            for line in response.iter_lines():
+                if line:
+                    decoded_line = line.decode('utf-8')
+                    
+                    if decoded_line.startswith("data:"):
+                        json_str = decoded_line[5:].strip() # Remove "data: "
+                        
+                        if json_str == "[DONE]":
+                            break
+                        
+                        try:
+                            data = json.loads(json_str)
+                            token = data.get("token", "")
+                            # Print token immediately without newline
+                            sys.stdout.write(token)
+                            sys.stdout.flush()
+                        except json.JSONDecodeError:
+                            pass
+                            
+    except requests.exceptions.ConnectionError:
+        print("\n❌ Connection Failed. Is the server running?")
+        print("👉 Run: uvicorn main:app --port 8000")
+    except Exception as e:
+        print(f"\n❌ Error: {e}")
+
     print("\n" + "-"*50)
     print("✅ Interaction Complete.")
 
 if __name__ == "__main__":
+    # Allow switching users via command line: python simulate_frontend.py user_2
     selected_user = sys.argv[1] if len(sys.argv) > 1 else "user_1"
     run_simulation(selected_user)

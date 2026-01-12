@@ -2,20 +2,22 @@ import requests
 import json
 import os
 import traceback
+from dotenv import load_dotenv
 
+load_dotenv()
 # --- CONFIGURATION ---
 BASE_URL = "https://vistachatbot.hmu.gr"
 WORKSPACE_SLUG = "vista-sl_temp"
-KEY_FILE = "api_keys/api_key.json"
+KEY_FILE = os.getenv("ANYTHING_LLM_KEY")
 
 def load_api_key():
-    if not os.path.exists(KEY_FILE):
-        print(f"❌ Error: {KEY_FILE} not found.")
+    
+    if not KEY_FILE:
+        print("❌ Error: ANYTHING_LLM_KEY not found in environment.")
         return None
-    with open(KEY_FILE, 'r') as f:
-        data = json.load(f)
-        raw_key = data.get("api_key", "").strip()
-        return f"Bearer {raw_key}" if "Bearer" not in raw_key else raw_key
+    
+    raw_key = KEY_FILE.strip()
+    return raw_key if raw_key.startswith("Bearer ") else f"Bearer {raw_key}"
 
 def get_history(api_key):
     # 1. First, get the list of threads to find a valid slug
@@ -24,16 +26,15 @@ def get_history(api_key):
     
     try:
         # Fetch Workspace Data
-        print(f"🔍 Fetching thread list...")
+        print(f"Fetching thread list...")
         resp = requests.get(list_url, headers=headers)
         
         if resp.status_code != 200:
-            print(f"❌ API Error {resp.status_code}: {resp.text}")
+            print(f"API Error {resp.status_code}: {resp.text}")
             return
 
         data = resp.json()
         
-        # --- ROBUST EXTRACTION (Same logic as list_threads.py) ---
         # 1. Handle Root (Is it a list?)
         workspace_data = None
         if isinstance(data, list):
@@ -56,14 +57,14 @@ def get_history(api_key):
 
         # 3. Final Safety Check before accessing .get()
         if not isinstance(final_workspace, dict):
-            print(f"❌ Error: Parsed workspace data is not a dictionary. It is: {type(final_workspace)}")
-            print(f"   Content: {final_workspace}")
+            print(f"Error: Parsed workspace data is not a dictionary. It is: {type(final_workspace)}")
+            print(f"Content: {final_workspace}")
             return
 
         threads = final_workspace.get('threads', [])
         
         if not threads:
-            print("❌ No threads found.")
+            print("No threads found.")
             return
 
         # 2. Pick the most recent thread
@@ -71,7 +72,7 @@ def get_history(api_key):
         slug = target_thread.get('slug')
         name = target_thread.get('name', 'Unnamed')
         
-        print(f"📖 Fetching history for thread: {name} (Slug: {slug})")
+        print(f"Fetching history for thread: {name} (Slug: {slug})")
         print("-" * 50)
 
         # 3. Fetch History for this specific thread

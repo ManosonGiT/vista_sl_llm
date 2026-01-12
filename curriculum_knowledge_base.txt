@@ -1,0 +1,307 @@
+VISTA-SL CURRICULUM DATABASE
+
+LESSON_ID: 1
+TITLE: Α
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/1
+---
+LESSON_ID: 2
+TITLE: Β
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/2
+---
+LESSON_ID: 3
+TITLE: Γ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/3
+---
+LESSON_ID: 47
+TITLE: Δ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/47
+---
+LESSON_ID: 48
+TITLE: Ε
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/48
+---
+LESSON_ID: 49
+TITLE: Ζ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/49
+---
+LESSON_ID: 50
+TITLE: Η
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/50
+---
+LESSON_ID: 51
+TITLE: Θ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/51
+---
+LESSON_ID: 52
+TITLE: Ι
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/52
+---
+LESSON_ID: 53
+TITLE: Κ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/53
+---
+LESSON_ID: 54
+TITLE: Λ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/54
+---
+LESSON_ID: 55
+TITLE: Μ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/55
+---
+LESSON_ID: 56
+TITLE: Ν
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/56
+---
+LESSON_ID: 57
+TITLE: Ξ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/57
+---
+LESSON_ID: 58
+TITLE: Ο
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/58
+---
+LESSON_ID: 59
+TITLE: Π
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/59
+---
+LESSON_ID: 60
+TITLE: Ρ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/60
+---
+LESSON_ID: 61
+TITLE: Σ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/61
+---
+LESSON_ID: 62
+TITLE: Τ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/62
+---
+LESSON_ID: 63
+TITLE: Υ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/63
+---
+LESSON_ID: 64
+TITLE: Φ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/64
+---
+LESSON_ID: 65
+TITLE: Χ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/65
+---
+LESSON_ID: 66
+TITLE: Ψ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/66
+---
+LESSON_ID: 67
+TITLE: Ω
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/lesson/67
+---
+LESSON_ID: 11
+TITLE: Αδελφή
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/lesson/11
+---
+LESSON_ID: 12
+TITLE: Αγόρι
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/lesson/12
+---
+LESSON_ID: 13
+TITLE: Γιαγιά
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/lesson/13
+---
+LESSON_ID: 14
+TITLE: Κορίτσι
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/lesson/14
+---
+LESSON_ID: 15
+TITLE: Μητέρα
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/lesson/15
+---
+LESSON_ID: 16
+TITLE: Πατέρας
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/lesson/16
+---
+LESSON_ID: 17
+TITLE: Παππούς
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/lesson/17
+---
+LESSON_ID: 4
+TITLE: Δευτέρα
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/lesson/4
+---
+LESSON_ID: 5
+TITLE: Κυριακή
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/lesson/5
+---
+LESSON_ID: 6
+TITLE: Παρασκευή
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/lesson/6
+---
+LESSON_ID: 7
+TITLE: Πέμπτη
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/lesson/7
+---
+LESSON_ID: 8
+TITLE: Σάββατο
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/lesson/8
+---
+LESSON_ID: 9
+TITLE: Τετάρτη
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/lesson/9
+---
+LESSON_ID: 10
+TITLE: Τρίτη
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/lesson/10
+---
+LESSON_ID: 18
+TITLE: Δέκα
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/18
+---
+LESSON_ID: 19
+TITLE: Δύο
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/19
+---
+LESSON_ID: 20
+TITLE: Είκοσι
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/20
+---
+LESSON_ID: 21
+TITLE: Ένα
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/21
+---
+LESSON_ID: 22
+TITLE: Εννέα
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/22
+---
+LESSON_ID: 23
+TITLE: Έξι
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/23
+---
+LESSON_ID: 24
+TITLE: Εφτά
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/24
+---
+LESSON_ID: 25
+TITLE: Οκτώ
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/25
+---
+LESSON_ID: 26
+TITLE: Πέντε
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/26
+---
+LESSON_ID: 27
+TITLE: Τέσσερα
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/27
+---
+LESSON_ID: 28
+TITLE: Τρία
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/28
+---
+LESSON_ID: 46
+TITLE: Χίλια
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/lesson/46
+---
+LESSON_ID: 29
+TITLE: Άνοιξη
+MODULE: Unit 5: Seasons
+LINK: https://vistasl.eelvex.net/lesson/29
+---
+LESSON_ID: 30
+TITLE: Καλοκαίρι
+MODULE: Unit 5: Seasons
+LINK: https://vistasl.eelvex.net/lesson/30
+---
+LESSON_ID: 31
+TITLE: Φθινόπωρο
+MODULE: Unit 5: Seasons
+LINK: https://vistasl.eelvex.net/lesson/31
+---
+LESSON_ID: 32
+TITLE: Χειμώνας
+MODULE: Unit 5: Seasons
+LINK: https://vistasl.eelvex.net/lesson/32
+---
+LESSON_ID: 33
+TITLE: Ακριβώς
+MODULE: Unit 6: Telling Time
+LINK: https://vistasl.eelvex.net/lesson/33
+---
+LESSON_ID: 34
+TITLE: Και τέταρτo
+MODULE: Unit 6: Telling Time
+LINK: https://vistasl.eelvex.net/lesson/34
+---
+LESSON_ID: 35
+TITLE: Παρά τέταρτο
+MODULE: Unit 6: Telling Time
+LINK: https://vistasl.eelvex.net/lesson/35
+---
+LESSON_ID: 36
+TITLE: Απόγευμα
+MODULE: Unit 7: Times of Day
+LINK: https://vistasl.eelvex.net/lesson/36
+---
+LESSON_ID: 37
+TITLE: Βράδυ
+MODULE: Unit 7: Times of Day
+LINK: https://vistasl.eelvex.net/lesson/37
+---
+LESSON_ID: 38
+TITLE: Μεσημέρι
+MODULE: Unit 7: Times of Day
+LINK: https://vistasl.eelvex.net/lesson/38
+---
+LESSON_ID: 39
+TITLE: Πρωί
+MODULE: Unit 7: Times of Day
+LINK: https://vistasl.eelvex.net/lesson/39
+---
