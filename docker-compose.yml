@@ -1,33 +1,40 @@
-version: '3.8'
-
 services:
+  # 1. VISTA-SL Middleware Backend
   vista-backend:
     build: .
     container_name: vista_middleware
+    runtime: runc
     restart: always
     ports:
-      - "8000:8000" # This will be the port that we can acess our script
+      - "${BACKEND_PORT:-8000}:8000"
     environment:
-      - DATABASE_URL=postgresql://lionakis:TempPass@db:5432/vista_db
+      - DATABASE_URL=postgresql://${DB_USER:-lionakis}:${DB_PASS:-TempPass}@db:5432/${DB_NAME:-vista_db}
       - PLATFORM_URL=https://vistasl.eelvex.net
-      - ANYTHING_LLM_URL=${https://vistachatbot.hmu.gr}
-      - ANYTHING_LLM_KEY=${D1AV3K8-9QR4AQ2-QTC87F4-2H2QWSF}
-      - WORKSPACE_SLUG=${vista-sl_temp}
+      - COACH_SECRET_KEY=${COACH_SECRET_KEY}
+      - LLM_MODEL=${LLM_MODEL:-groq/llama-3.1-8b-instant}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - TOGETHERAI_API_KEY=${TOGETHERAI_API_KEY}
+    volumes:
+      - chroma_data:/app/chroma_data
     depends_on:
       - db
-# 2. The PostgreSQL Database
+
+  # 2. PostgreSQL Database
   db:
     image: postgres:15-alpine
     container_name: vista_db
+    runtime: runc
     restart: always
     environment:
-      POSTGRES_USER: lionakis
-      POSTGRES_PASSWORD: TempPass
-      POSTGRES_DB: vista_db
+      POSTGRES_USER: ${DB_USER:-lionakis}
+      POSTGRES_PASSWORD: ${DB_PASS:-TempPass}
+      POSTGRES_DB: ${DB_NAME:-vista_db}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "${DB_PORT:-5432}:5432"
 
 volumes:
   postgres_data:
+  chroma_data:

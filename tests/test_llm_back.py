@@ -5,7 +5,7 @@ import os
 # --- CONFIGURATION ---
 BASE_URL = "https://vistachatbot.hmu.gr"
 WORKSPACE_SLUG = "vista-sl_temp"
-KEY_FILE = "api_keys/api_key.json"
+KEY_FILE = os.abspath(os.path.join(os.path.dirname(__file__), "..", "api_keys", "api_key.json"))
 
 def load_api_key():
     if not os.path.exists(KEY_FILE):

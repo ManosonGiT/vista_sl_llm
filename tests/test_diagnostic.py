@@ -1,8 +1,12 @@
-import database
-from sqlalchemy.orm import Session
 import sys
 import os
 import time
+
+# Ensure we can import local modules
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from backend import database
+from sqlalchemy.orm import Session
 
 def test_full_stack():
     print("=== VISTA-SL BACKEND DIAGNOSTIC TOOL ===")
@@ -10,8 +14,8 @@ def test_full_stack():
     # 1. Check Env
     db_url = os.getenv("DATABASE_URL")
     print(f"1️⃣  Checking Configuration...")
-    if "postgresql" in db_url:
-        print(f"   ✅ Configured for PostgreSQL (Port 5433)")
+    if db_url and "postgresql" in db_url:
+        print(f"   ✅ Configured for PostgreSQL")
     else:
         print(f"   ❌ Configured for SQLite (Check .env file!)")
 

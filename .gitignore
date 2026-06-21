@@ -3,4 +3,4 @@
 *.db
 /database
 /all_lessons
-/__pycache__
+__pycache__/

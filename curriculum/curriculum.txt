@@ -1,0 +1,546 @@
+---
+LESSON_ID: 1
+TITLE: Α
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Α.mp4
+---
+LESSON_ID: 2
+TITLE: Β
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Β.mp4
+---
+LESSON_ID: 3
+TITLE: Γ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Γ.mp4
+---
+LESSON_ID: 4
+TITLE: Δ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δ.mp4
+---
+LESSON_ID: 5
+TITLE: Ε
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ε.mp4
+---
+LESSON_ID: 6
+TITLE: Ζ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ζ.mp4
+---
+LESSON_ID: 7
+TITLE: Η
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Η.mp4
+---
+LESSON_ID: 8
+TITLE: Θ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Θ.mp4
+---
+LESSON_ID: 9
+TITLE: Ι
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ι.mp4
+---
+LESSON_ID: 10
+TITLE: Κ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Κ.mp4
+---
+LESSON_ID: 11
+TITLE: Λ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Λ.mp4
+---
+LESSON_ID: 12
+TITLE: Μ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Μ.mp4
+---
+LESSON_ID: 13
+TITLE: Ν
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ν.mp4
+---
+LESSON_ID: 14
+TITLE: Ξ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ξ.mp4
+---
+LESSON_ID: 15
+TITLE: Ο
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ο.mp4
+---
+LESSON_ID: 16
+TITLE: Π
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Π.mp4
+---
+LESSON_ID: 17
+TITLE: Ρ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ρ.mp4
+---
+LESSON_ID: 18
+TITLE: Σ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Σ.mp4
+---
+LESSON_ID: 19
+TITLE: Τ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Τ.mp4
+---
+LESSON_ID: 20
+TITLE: Υ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Υ.mp4
+---
+LESSON_ID: 21
+TITLE: Φ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Φ.mp4
+---
+LESSON_ID: 22
+TITLE: Χ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Χ.mp4
+---
+LESSON_ID: 23
+TITLE: Ψ
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ψ.mp4
+---
+LESSON_ID: 24
+TITLE: Ω
+MODULE: Unit 1: The Alphabet
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ω.mp4
+---
+LESSON_ID: 25
+TITLE: Αγόρι
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Αγόρι.mp4
+---
+LESSON_ID: 26
+TITLE: Αδελφή
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Αδελφή.mp4
+---
+LESSON_ID: 27
+TITLE: Γιαγιά
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Γιαγιά.mp4
+---
+LESSON_ID: 28
+TITLE: Κορίτσι
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Κορίτσι.mp4
+---
+LESSON_ID: 29
+TITLE: Μητέρα
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Μητέρα.mp4
+---
+LESSON_ID: 30
+TITLE: Παππούς
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Παππούς.mp4
+---
+LESSON_ID: 31
+TITLE: Πατέρας
+MODULE: Unit 2: Family
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Πατέρας.mp4
+---
+LESSON_ID: 32
+TITLE: Δευτέρα
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δευτέρα.mp4
+---
+LESSON_ID: 33
+TITLE: Κυριακή
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Κυριακή.mp4
+---
+LESSON_ID: 34
+TITLE: Πέμπτη
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Πέμπτη.mp4
+---
+LESSON_ID: 35
+TITLE: Παρασκευή
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Παρασκευή.mp4
+---
+LESSON_ID: 36
+TITLE: Σάββατο
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Σάββατο.mp4
+---
+LESSON_ID: 37
+TITLE: Τετάρτη
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Τετάρτη.mp4
+---
+LESSON_ID: 38
+TITLE: Τρίτη
+MODULE: Unit 3: Days of the Week
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Τρίτη.mp4
+---
+LESSON_ID: 39
+TITLE: Ένα
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ένα.mp4
+---
+LESSON_ID: 40
+TITLE: Έξι
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Έξι.mp4
+---
+LESSON_ID: 41
+TITLE: Έξι χιλιάδες
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Έξι χιλιάδες.mp4
+---
+LESSON_ID: 42
+TITLE: Δέκα
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δέκα.mp4
+---
+LESSON_ID: 43
+TITLE: Δύο
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δύο.mp4
+---
+LESSON_ID: 44
+TITLE: Είκοσι
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Είκοσι.mp4
+---
+LESSON_ID: 45
+TITLE: Εννέα
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Εννέα.mp4
+---
+LESSON_ID: 46
+TITLE: Εφτά
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Εφτά.mp4
+---
+LESSON_ID: 47
+TITLE: Οκτώ
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Οκτώ.mp4
+---
+LESSON_ID: 48
+TITLE: Πέντε
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Πέντε.mp4
+---
+LESSON_ID: 49
+TITLE: Τέσσερα
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Τέσσερα.mp4
+---
+LESSON_ID: 50
+TITLE: Τρία
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Τρία.mp4
+---
+LESSON_ID: 51
+TITLE: Χίλια
+MODULE: Unit 4: Numbers
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Χίλια.mp4
+---
+LESSON_ID: 52
+TITLE: Άνοιξη
+MODULE: Unit 5: Seasons
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Άνοιξη.mp4
+---
+LESSON_ID: 53
+TITLE: Καλοκαίρι
+MODULE: Unit 5: Seasons
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Καλοκαίρι.mp4
+---
+LESSON_ID: 54
+TITLE: Φθινόπωρο
+MODULE: Unit 5: Seasons
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Φθινόπωρο.mp4
+---
+LESSON_ID: 55
+TITLE: Χειμώνας
+MODULE: Unit 5: Seasons
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Χειμώνας.mp4
+---
+LESSON_ID: 56
+TITLE: Ακριβώς
+MODULE: Unit 6: Telling Time
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ακριβώς.mp4
+---
+LESSON_ID: 57
+TITLE: Και τέταρτo
+MODULE: Unit 6: Telling Time
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Και τέταρτo.mp4
+---
+LESSON_ID: 58
+TITLE: Παρά τέταρτο
+MODULE: Unit 6: Telling Time
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Παρά τέταρτο.mp4
+---
+LESSON_ID: 59
+TITLE: Απόγευμα
+MODULE: Unit 7: Times of Day
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Απόγευμα.mp4
+---
+LESSON_ID: 60
+TITLE: Βράδυ
+MODULE: Unit 7: Times of Day
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Βράδυ.mp4
+---
+LESSON_ID: 61
+TITLE: Μεσημέρι
+MODULE: Unit 7: Times of Day
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Μεσημέρι.mp4
+---
+LESSON_ID: 62
+TITLE: Πρωί
+MODULE: Unit 7: Times of Day
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Πρωί.mp4
+---
+LESSON_ID: 63
+TITLE: Άλογο
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Άλογο.mp4
+---
+LESSON_ID: 64
+TITLE: Άνεμος
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Άνεμος.mp4
+---
+LESSON_ID: 65
+TITLE: Έτοιμος
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Έτοιμος.mp4
+---
+LESSON_ID: 66
+TITLE: Έτος
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Έτος.mp4
+---
+LESSON_ID: 67
+TITLE: Έχω-υπάρχει
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Έχω-υπάρχει.mp4
+---
+LESSON_ID: 68
+TITLE: Ήλιος
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ήλιος.mp4
+---
+LESSON_ID: 69
+TITLE: Αγελάδα
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Αγελάδα.mp4
+---
+LESSON_ID: 70
+TITLE: Αδέλφια
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Αδέλφια.mp4
+---
+LESSON_ID: 71
+TITLE: Αλεπού
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Αλεπού.mp4
+---
+LESSON_ID: 72
+TITLE: Απρίλιος
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Απρίλιος.mp4
+---
+LESSON_ID: 73
+TITLE: Απόψε
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Απόψε.mp4
+---
+LESSON_ID: 74
+TITLE: Αρκούδα
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Αρκούδα.mp4
+---
+LESSON_ID: 75
+TITLE: Αυτή την εβδομάδα
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Αυτή την εβδομάδα.mp4
+---
+LESSON_ID: 76
+TITLE: Αύγουστος
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Αύγουστος.mp4
+---
+LESSON_ID: 77
+TITLE: Αύριο
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Αύριο.mp4
+---
+LESSON_ID: 78
+TITLE: Βάτραχος
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Βάτραχος.mp4
+---
+LESSON_ID: 79
+TITLE: Βουνό
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Βουνό.mp4
+---
+LESSON_ID: 80
+TITLE: Βροχή
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Βροχή.mp4
+---
+LESSON_ID: 81
+TITLE: Γάτα
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Γάτα.mp4
+---
+LESSON_ID: 82
+TITLE: Δάσος
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δάσος.mp4
+---
+LESSON_ID: 83
+TITLE: Δέντρο
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δέντρο.mp4
+---
+LESSON_ID: 84
+TITLE: Δεκέμβριος
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δεκέμβριος.mp4
+---
+LESSON_ID: 85
+TITLE: Δεν αρέσει
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δεν αρέσει.mp4
+---
+LESSON_ID: 86
+TITLE: Δεν καταλαβαίνω
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δεν καταλαβαίνω.mp4
+---
+LESSON_ID: 87
+TITLE: Δεν μπορώ
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δεν μπορώ.mp4
+---
+LESSON_ID: 88
+TITLE: Δεν ξέρω
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δεν ξέρω.mp4
+---
+LESSON_ID: 89
+TITLE: Εβδομάδα
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Εβδομάδα.mp4
+---
+LESSON_ID: 90
+TITLE: Εγγόνι
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Εγγόνι.mp4
+---
+LESSON_ID: 91
+TITLE: Ο αδελφός
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ο αδελφός.mp4
+---
+LESSON_ID: 92
+TITLE: Ο ανιψιός
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ο ανιψιός.mp4
+---
+LESSON_ID: 93
+TITLE: Ποτάμι
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ποτάμι.mp4
+---
+LESSON_ID: 94
+TITLE: η ανιψιά
+MODULE: Unit 8: People, Time & Nature
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-η ανιψιά.mp4
+---
+LESSON_ID: 95
+TITLE: Ένας χρόνος πόσες ημέρες έχει;
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ένας χρόνος πόσες ημέρες έχει;.mp4
+---
+LESSON_ID: 96
+TITLE: Έχω οικογένεια.
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Έχω οικογένεια..mp4
+---
+LESSON_ID: 97
+TITLE: Αυτό το καλοκαίρι είναι συννεφιασμένο.
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Αυτό το καλοκαίρι είναι συννεφιασμένο..mp4
+---
+LESSON_ID: 98
+TITLE: Αύριο θα έχει καταιγίδα
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Αύριο θα έχει καταιγίδα.mp4
+---
+LESSON_ID: 99
+TITLE: Δουλεύω Δευτέρα. Τετάρτη. Παρασκευή και Σάββατο.
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Δουλεύω Δευτέρα. Τετάρτη. Παρασκευή και Σάββατο..mp4
+---
+LESSON_ID: 100
+TITLE: Είμαι μοναχοπαίδι.
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Είμαι μοναχοπαίδι..mp4
+---
+LESSON_ID: 101
+TITLE: Η εβδομάδα έχει 7 ημέρες.
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Η εβδομάδα έχει 7 ημέρες..mp4
+---
+LESSON_ID: 102
+TITLE: Η ομάδα αυτή έχει μάθημα κάθε Δευτέρα-Τετάρτη.
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Η ομάδα αυτή έχει μάθημα κάθε Δευτέρα-Τετάρτη..mp4
+---
+LESSON_ID: 103
+TITLE: Η ομάδα αυτή έχει μάθημα κάθε Τρίτη-Πέμπτη.
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Η ομάδα αυτή έχει μάθημα κάθε Τρίτη-Πέμπτη..mp4
+---
+LESSON_ID: 104
+TITLE: Ο χρόνος πόσους μήνες έχει;
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Ο χρόνος πόσους μήνες έχει;.mp4
+---
+LESSON_ID: 105
+TITLE: Πόσες εποχές έχει ο χρόνος;
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Πόσες εποχές έχει ο χρόνος;.mp4
+---
+LESSON_ID: 106
+TITLE: Τα Σαββατοκύριακα πάω εκδρομή.
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Τα Σαββατοκύριακα πάω εκδρομή..mp4
+---
+LESSON_ID: 107
+TITLE: Τις Κυριακές τρώμε έξω σε ταβέρνα.
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Τις Κυριακές τρώμε έξω σε ταβέρνα..mp4
+---
+LESSON_ID: 108
+TITLE: Τις Κυριακές τρώμε στο σπίτι
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Τις Κυριακές τρώμε στο σπίτι.mp4
+---
+LESSON_ID: 109
+TITLE: Το Σάββατο πηγαίνω στο super market
+MODULE: Unit 9: Useful Sentences
+LINK: https://vistasl.eelvex.net/static/vid/teacher-video-Το Σάββατο πηγαίνω στο super market.mp4
+---

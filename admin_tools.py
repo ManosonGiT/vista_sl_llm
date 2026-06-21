@@ -1,10 +1,7 @@
-import asyncio
 import sys
 import os
-import requests
-import database
-from sqlalchemy.orm import Session
-import llm_service
+from backend import database
+from sqlalchemy import func
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -16,67 +13,103 @@ def get_db_session():
 # --- COMMAND 1: LIST USERS ---
 def list_users():
     db = get_db_session()
-    users = db.query(database.UserThread).all()
+    
+    # Query all users with their message count and last active timestamp from ChatMessage
+    user_stats = (
+        db.query(
+            database.ChatMessage.user_id,
+            func.count(database.ChatMessage.id).label("msg_count"),
+            func.max(database.ChatMessage.created_at).label("last_active")
+        )
+        .group_by(database.ChatMessage.user_id)
+        .order_by(func.max(database.ChatMessage.created_at).desc())
+        .all()
+    )
+    
+    # Check if there are any legacy user threads not captured in ChatMessage
+    legacy_threads = db.query(database.UserThread).all()
     db.close()
-    print(f"\n📊 FOUND {len(users)} USERS IN DATABASE")
-    print(f"{'USER ID':<25} | {'THREAD SLUG':<40}")
-    print("-" * 70)
-    for user in users:
-        print(f"{user.user_id:<25} | {user.thread_slug:<40}")
-    print("-" * 70 + "\n")
+
+    # Build unique users set
+    active_users = {stat[0] for stat in user_stats}
+    legacy_only = [t for t in legacy_threads if t.user_id not in active_users]
+
+    print(f"\n📊 FOUND {len(user_stats) + len(legacy_only)} USERS IN DATABASE")
+    print(f"{'USER ID':<25} | {'MESSAGE COUNT':<15} | {'LAST ACTIVE (UTC)':<25}")
+    print("-" * 75)
+    
+    for user_id, count, last_active in user_stats:
+        last_active_str = last_active.strftime("%Y-%m-%d %H:%M:%S") if last_active else "N/A"
+        print(f"{user_id:<25} | {count:<15} | {last_active_str:<25}")
+        
+    for thread in legacy_only:
+        created_at_str = thread.created_at.strftime("%Y-%m-%d %H:%M:%S") if thread.created_at else "N/A"
+        print(f"{thread.user_id:<25} | 0 (legacy)      | {created_at_str:<25} (Legacy thread: {thread.thread_slug})")
+        
+    print("-" * 75 + "\n")
 
 # --- COMMAND 2: DELETE USER ---
-async def delete_user_history(user_id: str):
+def delete_user_history(user_id: str):
     db = get_db_session()
-    user = db.query(database.UserThread).filter(database.UserThread.user_id == user_id).first()
     
-    if not user:
-        print(f"❌ User '{user_id}' not found.")
+    # Check current active messages
+    msg_count = database.get_message_count(db, user_id)
+    
+    # Check legacy user thread table
+    legacy_user = db.query(database.UserThread).filter(database.UserThread.user_id == user_id).first()
+    
+    if msg_count == 0 and not legacy_user:
+        print(f"❌ User '{user_id}' not found in active chats or legacy user threads.")
         db.close()
         return
 
-    print(f"🔍 Found Thread: {user.thread_slug}")
-    print("   🧠 Deleting from AnythingLLM...", end=" ")
-    await llm_service.delete_thread(user.thread_slug)
-    print("✅ Success")
+    print(f"🔍 Found user '{user_id}':")
+    if msg_count > 0:
+        print(f"   💬 Has {msg_count} messages in chat_messages table.")
+    if legacy_user:
+        print(f"   Legacy thread slug: {legacy_user.thread_slug}")
 
-    print("   🗑️  Deleting from Database...", end=" ")
-    db.delete(user)
-    db.commit()
+    # Delete message history
+    if msg_count > 0:
+        print("   🗑️  Deleting chat history...", end=" ")
+        try:
+            deleted_count = database.clear_history(db, user_id)
+            print(f"✅ Success (deleted {deleted_count} messages)")
+        except Exception as e:
+            print(f"❌ Failed: {e}")
+
+    # Delete legacy user thread entry if exists
+    if legacy_user:
+        print("   🗑️  Deleting legacy user thread entry...", end=" ")
+        try:
+            db.delete(legacy_user)
+            db.commit()
+            print("✅ Success")
+        except Exception as e:
+            db.rollback()
+            print(f"❌ Failed: {e}")
+            
     db.close()
-    print("✅ Success")
 
-# --- COMMAND 3: WIPE LOGS (Using the -1 Trick) ---
+# --- COMMAND 3: WIPE ALL LOGS / CHAT HISTORY ---
 def wipe_system_logs():
-    base_url = os.getenv("ANYTHING_LLM_URL")
-    api_key = os.getenv("anything_llm_cookie")
-    
-    # 🎯 The exact endpoint from your screenshot
-    url = f"{base_url}/api/system/workspace-chats/-1"
-    
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json"
-    }
+    confirm = input("⚠️ WARNING: This will permanently delete ALL chat messages and legacy user threads from the database. Are you sure? (y/N): ")
+    if confirm.lower() != 'y':
+        print("❌ Operation cancelled.")
+        return
 
-    print(f"\n☢️  ATTEMPTING SYSTEM LOG WIPE (Target: -1)")
-    print(f"   URL: {url}")
-    
+    db = get_db_session()
+    print("\n☢️  ATTEMPTING DATABASE WIPE...")
     try:
-        resp = requests.delete(url, headers=headers)
-        
-        if resp.status_code == 200:
-            print("✅ SUCCESS! The system accepted the -1 command.")
-            print("   Visual logs should now be empty.")
-        elif resp.status_code == 403 or resp.status_code == 401:
-            print(f"❌ Permission Denied ({resp.status_code}).")
-            print("   Reason: This endpoint requires a 'Human Admin Token' (JWT), not a Developer API Key.")
-            print("   👉 Solution: You must click the 'Clear Chats' button in the browser.")
-        else:
-            print(f"❌ Failed: {resp.status_code} - {resp.text}")
-
+        msg_count = db.query(database.ChatMessage).delete()
+        thread_count = db.query(database.UserThread).delete()
+        db.commit()
+        print(f"✅ SUCCESS! Deleted {msg_count} active chat messages and {thread_count} legacy user threads.")
     except Exception as e:
+        db.rollback()
         print(f"💥 Error: {e}")
+    finally:
+        db.close()
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -88,6 +121,10 @@ if __name__ == "__main__":
     if command == "list":
         list_users()
     elif command == "delete":
-        asyncio.run(delete_user_history(sys.argv[2]))
+        if len(sys.argv) < 3:
+            print("Error: Please provide a user_id to delete.")
+            print("Usage: python admin_tools.py delete <user_id>")
+            sys.exit(1)
+        delete_user_history(sys.argv[2])
     elif command == "wipe_logs":
         wipe_system_logs()
