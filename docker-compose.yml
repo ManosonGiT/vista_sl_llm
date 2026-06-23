@@ -15,6 +15,11 @@ services:
       - GROQ_API_KEY=${GROQ_API_KEY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - TOGETHERAI_API_KEY=${TOGETHERAI_API_KEY}
+      - BACKUP_LLM_MODEL=${BACKUP_LLM_MODEL}
+      - BACKUP_LLM_API_KEY=${BACKUP_LLM_API_KEY}
+      - BACKUP_LLM_API_BASE=${BACKUP_LLM_API_BASE}
+      - RATE_LIMIT_REQUESTS=${RATE_LIMIT_REQUESTS}
+      - RATE_LIMIT_WINDOW=${RATE_LIMIT_WINDOW}
     volumes:
       - chroma_data:/app/chroma_data
     depends_on:
@@ -32,8 +37,8 @@ services:
       POSTGRES_DB: ${DB_NAME:-vista_db}
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "${DB_PORT:-5432}:5432"
+    # ports:
+    #   - "${DB_PORT:-5432}:5432"
 
 volumes:
   postgres_data:

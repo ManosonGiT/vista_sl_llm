@@ -4,6 +4,9 @@ import uvicorn
 import os
 
 # Backend imports
+from backend.logging_config import setup_logging
+setup_logging()
+
 from backend import database, rag_engine
 from backend.routes import chat_router, health_router
 

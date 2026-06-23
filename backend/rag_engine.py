@@ -3,6 +3,7 @@ RAG Engine — Optimized for Module-based guidance.
 """
 
 import os
+from backend.logging_config import logger
 
 CURRICULUM_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "curriculum", "curriculum.txt"))
 
@@ -15,7 +16,7 @@ def _parse_curriculum():
     global _all_titles
     current = {}
     if not os.path.exists(CURRICULUM_PATH): 
-        print(f"⚠️ Warning: Curriculum path {CURRICULUM_PATH} does not exist.")
+        logger.warning(f"Curriculum path {CURRICULUM_PATH} does not exist.")
         return
 
     with open(CURRICULUM_PATH, "r", encoding="utf-8") as f:
@@ -38,9 +39,9 @@ def _parse_curriculum():
             _modules[mod_name].append(current)
 
 def init_rag():
-    print("📚 Parsing Curriculum into Modules...")
+    logger.info("Parsing Curriculum into Modules...")
     _parse_curriculum()
-    print(f"   ✅ Loaded {len(_modules)} Modules and {len(_all_titles)} Lessons.")
+    logger.info(f"Loaded {len(_modules)} Modules and {len(_all_titles)} Lessons.")
 
 def get_module_list():
     """Returns unique module names."""

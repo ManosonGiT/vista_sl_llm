@@ -4,6 +4,7 @@ import json
 import hashlib
 import time
 from dotenv import load_dotenv
+from backend.logging_config import logger
 
 load_dotenv()
 
@@ -28,12 +29,18 @@ def get_auth_headers(username: str) -> dict:
         "User-Agent": "VISTA-SL-Middleware/1.0"
     }
 
-async def fetch_user_progress(username: str):
+async def fetch_user_progress(username: str, token: str = None):
     """
     Fetches student progress from the core platform using Signed HTTP Headers.
+    Falls back to using user session token/cookie if provided.
     """
     url = f"{BASE_URL}/api/v1/coach"
     headers = get_auth_headers(username)
+    if token:
+        if "remember_token" in token or "session" in token:
+            headers["Cookie"] = token
+        else:
+            headers["Authorization"] = f"Bearer {token}"
     
     async with httpx.AsyncClient(verify=False) as client:
         try:
@@ -47,24 +54,23 @@ async def fetch_user_progress(username: str):
                 next_lesson = recs.get('nextLesson')
                 
                 recent_lessons = summary.get('recentLessons', [])
-                recent_formatted = []
+                completed_titles = []
                 for item in recent_lessons:
                     title = item.get('lessonTitle')
-                    module = item.get('moduleTitle')
                     is_completed = item.get('completed', False)
-                    if title:
-                        status = "Completed" if is_completed else "Accessed"
-                        recent_formatted.append(f"'{title}' in '{module}' ({status})")
-
-                text = f"STUDENT PROFILE:\n- Username: {learner.get('username')}\n"
-                text += f"- Course Progress: {summary.get('completedLessons')}/{summary.get('totalLessons')} lessons ({summary.get('completionPercent')}% complete)\n"
-                if recent_formatted:
-                    text += f"- Recently Studied: {', '.join(recent_formatted)}\n"
+                    if title and is_completed:
+                        completed_titles.append(f"'{title}'")
+                
+                text = f"STUDENT PROFILE:\n"
+                text += f"- Completed: {summary.get('completedLessons')}/{summary.get('totalLessons')} lessons\n"
+                if completed_titles:
+                    text += f"- Recently completed: {', '.join(completed_titles)}\n"
                 if next_lesson:
-                    text += f"- NEXT RECOMMENDED LESSON: '{next_lesson.get('lessonTitle')}' in '{next_lesson.get('moduleTitle')}'\n"
+                    text += f"- Recommended next: '{next_lesson.get('lessonTitle')}' in '{next_lesson.get('moduleTitle')}'\n"
                 return text
             
+            logger.warning(f"Platform returned status {resp.status_code}: {resp.text}")
             return "No user progress data available."
         except Exception as e:
-            print(f"💥 Platform Error: {e}")
+            logger.error(f"Platform Error: {e}")
             return "Error connecting to VISTA-SL Platform."

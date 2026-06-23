@@ -1,9 +1,10 @@
 from sqlalchemy import create_engine, Column, String, Integer, DateTime, Text
 from sqlalchemy.orm import sessionmaker, declarative_base
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 from dotenv import load_dotenv
 import time
+from backend.logging_config import logger
 
 load_dotenv()
 
@@ -20,14 +21,14 @@ for i in range(5):
             pass # Just testing connection
         break
     except Exception as e:
-        print(f"⏳ Waiting for Database... ({i+1}/5)")
+        logger.warning(f"Waiting for Database... ({i+1}/5) Error: {e}")
         time.sleep(2)
 
 import sys
 
 if not engine:
-    print("Critical Error: Could not connect to PostgreSQL database.")
-    print("Ensure PostgreSQL is running and you ran './setup_postgres.sh' first!")
+    logger.critical("Critical Error: Could not connect to PostgreSQL database.")
+    logger.critical("Ensure PostgreSQL is running and you ran './setup_postgres.sh' first!")
     sys.exit(1)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -94,11 +95,41 @@ def save_message(db, user_id: str, role: str, content: str):
 def get_recent_messages(db, user_id: str, limit: int = 20):
     """
     Fetch the last N messages for a user, returned in chronological order.
-    Returns a list of dicts: [{"role": "user", "content": "..."}, ...]
+    Only returns messages from the last 1 hour. If the user hasn't made
+    any calls in the last 1 hour, wipes their entire history from the database.
     """
-    messages = (
+    now = datetime.utcnow()
+    one_hour_ago = now - timedelta(hours=1)
+    
+    # Get the latest message for this user to check when they were last active
+    latest_msg = (
         db.query(ChatMessage)
         .filter(ChatMessage.user_id == user_id)
+        .order_by(ChatMessage.created_at.desc())
+        .first()
+    )
+    
+    if latest_msg:
+        if latest_msg.created_at < one_hour_ago:
+            # User hasn't made any calls in the last 1 hour, delete all history
+            db.query(ChatMessage).filter(ChatMessage.user_id == user_id).delete()
+            db.commit()
+            return []
+        else:
+            # User has chatted recently. Delete messages older than 1 hour to keep DB clean
+            db.query(ChatMessage).filter(
+                ChatMessage.user_id == user_id,
+                ChatMessage.created_at < one_hour_ago
+            ).delete()
+            db.commit()
+            
+    # Now retrieve the remaining messages from the last hour
+    messages = (
+        db.query(ChatMessage)
+        .filter(
+            ChatMessage.user_id == user_id,
+            ChatMessage.created_at >= one_hour_ago
+        )
         .order_by(ChatMessage.created_at.desc())
         .limit(limit)
         .all()
