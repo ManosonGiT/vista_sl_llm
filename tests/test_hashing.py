@@ -3,6 +3,10 @@ import os
 import hashlib
 import time
 
+# Set test environment variable BEFORE importing platform_connector
+secret = "temp_coach_secret_for_dev"
+os.environ["COACH_SECRET_KEY"] = secret
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from backend.platform_connector import get_auth_headers
@@ -12,8 +16,6 @@ def test_headers_signature():
     
     # Setup test variables
     username = "test-history-user-001"
-    secret = "temp_coach_secret_for_dev"
-    os.environ["COACH_SECRET_KEY"] = secret
     
     # Import again to refresh os.environ if needed, but since it reads from env:
     # get_auth_headers uses os.getenv("COACH_SECRET_KEY", "") which reads dynamic env variables.

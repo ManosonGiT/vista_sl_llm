@@ -12,9 +12,24 @@ import asyncio
 import json
 import socket
 
+import os
+
 BASE_URL = "http://localhost:8000"
 USER_ID = "test-history-user-001"
 TOKEN = "dummy-token"
+
+# Try to load user and token from frontend_simulate_key.json
+cred_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend_simulate_key.json"))
+if os.path.exists(cred_path):
+    try:
+        with open(cred_path, "r") as f:
+            cred_data = json.load(f)
+            user_data = cred_data.get("user_1", {})
+            USER_ID = user_data.get("username", USER_ID)
+            TOKEN = user_data.get("token", TOKEN)
+            print(f"Loaded credentials for user: {USER_ID}")
+    except Exception as e:
+        print(f"⚠️ Error loading frontend_simulate_key.json: {e}")
 
 
 def is_server_running():
@@ -87,6 +102,18 @@ async def run_test():
     if not healthy:
         print("⚠️  System is degraded. Continuing anyway...\n")
 
+    # Reset history to ensure clean test runs
+    print("\n🧹 Resetting user chat history & cache...")
+    async with httpx.AsyncClient(timeout=5.0) as client:
+        try:
+            resp = await client.post(f"{BASE_URL}/chat/clear", json={"userId": USER_ID})
+            if resp.status_code == 200:
+                print("   ✅ History cleared successfully.")
+            else:
+                print(f"   ⚠️ Could not clear history (Status {resp.status_code})")
+        except Exception as e:
+            print(f"   ⚠️ Could not connect to clear history: {e}")
+
     # 1. First Message (Fresh context fetch + RAG search)
     print("\n--- Test 1: Fresh Context + RAG ---")
     await send_chat("What letter comes after Α in the Greek alphabet?")
@@ -102,6 +129,12 @@ async def run_test():
     # 3. Third Message (Memory check)
     print("\n--- Test 3: Memory Recall ---")
     await send_chat("What was the first thing I asked you?")
+
+    await asyncio.sleep(1)
+
+    # 4. Fourth Message (Querying recommended lesson based on fetched progress with token)
+    print("\n--- Test 4: Real User Progress Recommendation with Session Token ---")
+    await send_chat("What lesson should I watch next?")
 
     print("\n" + "=" * 50)
     print("✅ Test sequence complete.")
