@@ -1,0 +1,989 @@
+<html lang="en" data-theme="light"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Contents - VISTA-SL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    
+    <nav class="container-fluid" style="position: sticky; top: 0; backdrop-filter: blur(6px); background: color-mix(in srgb, var(--background-color) 90%, transparent); z-index: 100; border-bottom: 1px solid var(--border-color);">
+        <ul>
+            <li><a href="/"><strong>VISTA-SL</strong></a></li>
+        </ul>
+        <ul>
+            
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/contents">Contents</a></li>
+                
+                <li><a href="/logout">Logout</a></li>
+            
+            
+            <li><button id="theme-toggle" class="secondary theme-toggle-btn" aria-label="Toggle theme">🌙</button></li>
+            
+        </ul>
+    </nav>
+    <main class="container contents-page">
+        
+            
+        
+        
+<article class="curriculum-shell">
+  <header class="curriculum-header">
+    <div class="badge-group">
+      <span class="badge">Library</span>
+    </div>
+    <h1>Video Contents</h1>
+    <p>Browse all teacher videos by course and module. Click a thumbnail to preview.</p>
+  </header>
+
+  
+  <nav class="contents-toc" aria-label="Jump to course">
+    
+    <a class="contents-toc-chip" href="#course-1">GSL - Level 1</a>
+    
+  </nav>
+  
+
+  <div class="contents-preview-sticky" id="contentsPreview">
+    <video id="videoPlayer" class="contents-preview-video" controls="" preload="metadata" src="/static/vid/teacher-video-%CE%92.mp4"></video>
+    <p id="videoTitle" class="contents-preview-title">Β</p>
+  </div>
+
+  
+  <section class="contents-course" id="course-1">
+    <header class="contents-course-header">
+      <h2>GSL - Level 1</h2>
+      <p>An introductory course to Greek Sign Language, organized into thematic units.</p>
+    </header>
+
+    
+    <section class="contents-module" id="module-1">
+      <header class="contents-module-header">
+        <h3>Unit 1: The Alphabet</h3>
+        <span class="pill pill-muted">24 videos</span>
+      </header>
+
+      <div class="contents-thumb-grid">
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91.mp4" data-title="Α">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Α</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%92.mp4" data-title="Β">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%92.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Β</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%93.mp4" data-title="Γ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%93.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Γ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94.mp4" data-title="Δ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%95.mp4" data-title="Ε">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%95.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ε</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%96.mp4" data-title="Ζ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%96.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ζ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%97.mp4" data-title="Η">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%97.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Η</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%98.mp4" data-title="Θ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%98.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Θ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%99.mp4" data-title="Ι">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%99.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ι</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9A.mp4" data-title="Κ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9A.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Κ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9B.mp4" data-title="Λ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9B.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Λ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9C.mp4" data-title="Μ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9C.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Μ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9D.mp4" data-title="Ν">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9D.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ν</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9E.mp4" data-title="Ξ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9E.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ξ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9F.mp4" data-title="Ο">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9F.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ο</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A0.mp4" data-title="Π">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A0.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Π</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A1.mp4" data-title="Ρ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ρ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A3.mp4" data-title="Σ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A3.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Σ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A4.mp4" data-title="Τ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A4.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Τ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A5.mp4" data-title="Υ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A5.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Υ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A6.mp4" data-title="Φ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A6.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Φ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A7.mp4" data-title="Χ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A7.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Χ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A8.mp4" data-title="Ψ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A8.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ψ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A9.mp4" data-title="Ω">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ω</span>
+        </button>
+        
+      </div>
+    </section>
+    
+    <section class="contents-module" id="module-2">
+      <header class="contents-module-header">
+        <h3>Unit 2: Family</h3>
+        <span class="pill pill-muted">7 videos</span>
+      </header>
+
+      <div class="contents-thumb-grid">
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CE%B3%CF%8C%CF%81%CE%B9.mp4" data-title="Αγόρι">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CE%B3%CF%8C%CF%81%CE%B9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Αγόρι</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CE%B4%CE%B5%CE%BB%CF%86%CE%AE.mp4" data-title="Αδελφή">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CE%B4%CE%B5%CE%BB%CF%86%CE%AE.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Αδελφή</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%93%CE%B9%CE%B1%CE%B3%CE%B9%CE%AC.mp4" data-title="Γιαγιά">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%93%CE%B9%CE%B1%CE%B3%CE%B9%CE%AC.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Γιαγιά</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9A%CE%BF%CF%81%CE%AF%CF%84%CF%83%CE%B9.mp4" data-title="Κορίτσι">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9A%CE%BF%CF%81%CE%AF%CF%84%CF%83%CE%B9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Κορίτσι</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9C%CE%B7%CF%84%CE%AD%CF%81%CE%B1.mp4" data-title="Μητέρα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9C%CE%B7%CF%84%CE%AD%CF%81%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Μητέρα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A0%CE%B1%CF%80%CF%80%CE%BF%CF%8D%CF%82.mp4" data-title="Παππούς">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A0%CE%B1%CF%80%CF%80%CE%BF%CF%8D%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Παππούς</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A0%CE%B1%CF%84%CE%AD%CF%81%CE%B1%CF%82.mp4" data-title="Πατέρας">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A0%CE%B1%CF%84%CE%AD%CF%81%CE%B1%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Πατέρας</span>
+        </button>
+        
+      </div>
+    </section>
+    
+    <section class="contents-module" id="module-3">
+      <header class="contents-module-header">
+        <h3>Unit 3: Days of the Week</h3>
+        <span class="pill pill-muted">7 videos</span>
+      </header>
+
+      <div class="contents-thumb-grid">
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94%CE%B5%CF%85%CF%84%CE%AD%CF%81%CE%B1.mp4" data-title="Δευτέρα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94%CE%B5%CF%85%CF%84%CE%AD%CF%81%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δευτέρα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9A%CF%85%CF%81%CE%B9%CE%B1%CE%BA%CE%AE.mp4" data-title="Κυριακή">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9A%CF%85%CF%81%CE%B9%CE%B1%CE%BA%CE%AE.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Κυριακή</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A0%CE%AD%CE%BC%CF%80%CF%84%CE%B7.mp4" data-title="Πέμπτη">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A0%CE%AD%CE%BC%CF%80%CF%84%CE%B7.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Πέμπτη</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A0%CE%B1%CF%81%CE%B1%CF%83%CE%BA%CE%B5%CF%85%CE%AE.mp4" data-title="Παρασκευή">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A0%CE%B1%CF%81%CE%B1%CF%83%CE%BA%CE%B5%CF%85%CE%AE.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Παρασκευή</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A3%CE%AC%CE%B2%CE%B2%CE%B1%CF%84%CE%BF.mp4" data-title="Σάββατο">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A3%CE%AC%CE%B2%CE%B2%CE%B1%CF%84%CE%BF.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Σάββατο</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A4%CE%B5%CF%84%CE%AC%CF%81%CF%84%CE%B7.mp4" data-title="Τετάρτη">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A4%CE%B5%CF%84%CE%AC%CF%81%CF%84%CE%B7.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Τετάρτη</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A4%CF%81%CE%AF%CF%84%CE%B7.mp4" data-title="Τρίτη">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A4%CF%81%CE%AF%CF%84%CE%B7.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Τρίτη</span>
+        </button>
+        
+      </div>
+    </section>
+    
+    <section class="contents-module" id="module-4">
+      <header class="contents-module-header">
+        <h3>Unit 4: Numbers</h3>
+        <span class="pill pill-muted">13 videos</span>
+      </header>
+
+      <div class="contents-thumb-grid">
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%88%CE%BD%CE%B1.mp4" data-title="Ένα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%88%CE%BD%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ένα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%88%CE%BE%CE%B9.mp4" data-title="Έξι">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%88%CE%BE%CE%B9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Έξι</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%88%CE%BE%CE%B9%20%CF%87%CE%B9%CE%BB%CE%B9%CE%AC%CE%B4%CE%B5%CF%82.mp4" data-title="Έξι χιλιάδες">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%88%CE%BE%CE%B9%20%CF%87%CE%B9%CE%BB%CE%B9%CE%AC%CE%B4%CE%B5%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Έξι χιλιάδες</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94%CE%AD%CE%BA%CE%B1.mp4" data-title="Δέκα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94%CE%AD%CE%BA%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δέκα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94%CF%8D%CE%BF.mp4" data-title="Δύο">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94%CF%8D%CE%BF.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δύο</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%95%CE%AF%CE%BA%CE%BF%CF%83%CE%B9.mp4" data-title="Είκοσι">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%95%CE%AF%CE%BA%CE%BF%CF%83%CE%B9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Είκοσι</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%95%CE%BD%CE%BD%CE%AD%CE%B1.mp4" data-title="Εννέα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%95%CE%BD%CE%BD%CE%AD%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Εννέα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%95%CF%86%CF%84%CE%AC.mp4" data-title="Εφτά">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%95%CF%86%CF%84%CE%AC.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Εφτά</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9F%CE%BA%CF%84%CF%8E.mp4" data-title="Οκτώ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9F%CE%BA%CF%84%CF%8E.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Οκτώ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A0%CE%AD%CE%BD%CF%84%CE%B5.mp4" data-title="Πέντε">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A0%CE%AD%CE%BD%CF%84%CE%B5.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Πέντε</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A4%CE%AD%CF%83%CF%83%CE%B5%CF%81%CE%B1.mp4" data-title="Τέσσερα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A4%CE%AD%CF%83%CF%83%CE%B5%CF%81%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Τέσσερα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A4%CF%81%CE%AF%CE%B1.mp4" data-title="Τρία">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A4%CF%81%CE%AF%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Τρία</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A7%CE%AF%CE%BB%CE%B9%CE%B1.mp4" data-title="Χίλια">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A7%CE%AF%CE%BB%CE%B9%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Χίλια</span>
+        </button>
+        
+      </div>
+    </section>
+    
+    <section class="contents-module" id="module-5">
+      <header class="contents-module-header">
+        <h3>Unit 5: Seasons</h3>
+        <span class="pill pill-muted">4 videos</span>
+      </header>
+
+      <div class="contents-thumb-grid">
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%86%CE%BD%CE%BF%CE%B9%CE%BE%CE%B7.mp4" data-title="Άνοιξη">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%86%CE%BD%CE%BF%CE%B9%CE%BE%CE%B7.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Άνοιξη</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9A%CE%B1%CE%BB%CE%BF%CE%BA%CE%B1%CE%AF%CF%81%CE%B9.mp4" data-title="Καλοκαίρι">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9A%CE%B1%CE%BB%CE%BF%CE%BA%CE%B1%CE%AF%CF%81%CE%B9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Καλοκαίρι</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A6%CE%B8%CE%B9%CE%BD%CF%8C%CF%80%CF%89%CF%81%CE%BF.mp4" data-title="Φθινόπωρο">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A6%CE%B8%CE%B9%CE%BD%CF%8C%CF%80%CF%89%CF%81%CE%BF.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Φθινόπωρο</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A7%CE%B5%CE%B9%CE%BC%CF%8E%CE%BD%CE%B1%CF%82.mp4" data-title="Χειμώνας">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A7%CE%B5%CE%B9%CE%BC%CF%8E%CE%BD%CE%B1%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Χειμώνας</span>
+        </button>
+        
+      </div>
+    </section>
+    
+    <section class="contents-module" id="module-6">
+      <header class="contents-module-header">
+        <h3>Unit 6: Telling Time</h3>
+        <span class="pill pill-muted">3 videos</span>
+      </header>
+
+      <div class="contents-thumb-grid">
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CE%BA%CF%81%CE%B9%CE%B2%CF%8E%CF%82.mp4" data-title="Ακριβώς">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CE%BA%CF%81%CE%B9%CE%B2%CF%8E%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ακριβώς</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9A%CE%B1%CE%B9%20%CF%84%CE%AD%CF%84%CE%B1%CF%81%CF%84o.mp4" data-title="Και τέταρτo">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9A%CE%B1%CE%B9%20%CF%84%CE%AD%CF%84%CE%B1%CF%81%CF%84o.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Και τέταρτo</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A0%CE%B1%CF%81%CE%AC%20%CF%84%CE%AD%CF%84%CE%B1%CF%81%CF%84%CE%BF.mp4" data-title="Παρά τέταρτο">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A0%CE%B1%CF%81%CE%AC%20%CF%84%CE%AD%CF%84%CE%B1%CF%81%CF%84%CE%BF.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Παρά τέταρτο</span>
+        </button>
+        
+      </div>
+    </section>
+    
+    <section class="contents-module" id="module-7">
+      <header class="contents-module-header">
+        <h3>Unit 7: Times of Day</h3>
+        <span class="pill pill-muted">4 videos</span>
+      </header>
+
+      <div class="contents-thumb-grid">
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CF%80%CF%8C%CE%B3%CE%B5%CF%85%CE%BC%CE%B1.mp4" data-title="Απόγευμα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CF%80%CF%8C%CE%B3%CE%B5%CF%85%CE%BC%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Απόγευμα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%92%CF%81%CE%AC%CE%B4%CF%85.mp4" data-title="Βράδυ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%92%CF%81%CE%AC%CE%B4%CF%85.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Βράδυ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9C%CE%B5%CF%83%CE%B7%CE%BC%CE%AD%CF%81%CE%B9.mp4" data-title="Μεσημέρι">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9C%CE%B5%CF%83%CE%B7%CE%BC%CE%AD%CF%81%CE%B9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Μεσημέρι</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A0%CF%81%CF%89%CE%AF.mp4" data-title="Πρωί">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A0%CF%81%CF%89%CE%AF.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Πρωί</span>
+        </button>
+        
+      </div>
+    </section>
+    
+    <section class="contents-module" id="module-8">
+      <header class="contents-module-header">
+        <h3>Unit 8: People, Time &amp; Nature</h3>
+        <span class="pill pill-muted">32 videos</span>
+      </header>
+
+      <div class="contents-thumb-grid">
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%86%CE%BB%CE%BF%CE%B3%CE%BF.mp4" data-title="Άλογο">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%86%CE%BB%CE%BF%CE%B3%CE%BF.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Άλογο</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%86%CE%BD%CE%B5%CE%BC%CE%BF%CF%82.mp4" data-title="Άνεμος">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%86%CE%BD%CE%B5%CE%BC%CE%BF%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Άνεμος</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%88%CF%84%CE%BF%CE%B9%CE%BC%CE%BF%CF%82.mp4" data-title="Έτοιμος">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%88%CF%84%CE%BF%CE%B9%CE%BC%CE%BF%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Έτοιμος</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%88%CF%84%CE%BF%CF%82.mp4" data-title="Έτος">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%88%CF%84%CE%BF%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Έτος</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%88%CF%87%CF%89-%CF%85%CF%80%CE%AC%CF%81%CF%87%CE%B5%CE%B9.mp4" data-title="Έχω-υπάρχει">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%88%CF%87%CF%89-%CF%85%CF%80%CE%AC%CF%81%CF%87%CE%B5%CE%B9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Έχω-υπάρχει</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%89%CE%BB%CE%B9%CE%BF%CF%82.mp4" data-title="Ήλιος">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%89%CE%BB%CE%B9%CE%BF%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ήλιος</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CE%B3%CE%B5%CE%BB%CE%AC%CE%B4%CE%B1.mp4" data-title="Αγελάδα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CE%B3%CE%B5%CE%BB%CE%AC%CE%B4%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Αγελάδα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CE%B4%CE%AD%CE%BB%CF%86%CE%B9%CE%B1.mp4" data-title="Αδέλφια">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CE%B4%CE%AD%CE%BB%CF%86%CE%B9%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Αδέλφια</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CE%BB%CE%B5%CF%80%CE%BF%CF%8D.mp4" data-title="Αλεπού">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CE%BB%CE%B5%CF%80%CE%BF%CF%8D.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Αλεπού</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CF%80%CF%81%CE%AF%CE%BB%CE%B9%CE%BF%CF%82.mp4" data-title="Απρίλιος">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CF%80%CF%81%CE%AF%CE%BB%CE%B9%CE%BF%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Απρίλιος</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CF%80%CF%8C%CF%88%CE%B5.mp4" data-title="Απόψε">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CF%80%CF%8C%CF%88%CE%B5.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Απόψε</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CF%81%CE%BA%CE%BF%CF%8D%CE%B4%CE%B1.mp4" data-title="Αρκούδα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CF%81%CE%BA%CE%BF%CF%8D%CE%B4%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Αρκούδα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CF%85%CF%84%CE%AE%20%CF%84%CE%B7%CE%BD%20%CE%B5%CE%B2%CE%B4%CE%BF%CE%BC%CE%AC%CE%B4%CE%B1.mp4" data-title="Αυτή την εβδομάδα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CF%85%CF%84%CE%AE%20%CF%84%CE%B7%CE%BD%20%CE%B5%CE%B2%CE%B4%CE%BF%CE%BC%CE%AC%CE%B4%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Αυτή την εβδομάδα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CF%8D%CE%B3%CE%BF%CF%85%CF%83%CF%84%CE%BF%CF%82.mp4" data-title="Αύγουστος">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CF%8D%CE%B3%CE%BF%CF%85%CF%83%CF%84%CE%BF%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Αύγουστος</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CF%8D%CF%81%CE%B9%CE%BF.mp4" data-title="Αύριο">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CF%8D%CF%81%CE%B9%CE%BF.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Αύριο</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%92%CE%AC%CF%84%CF%81%CE%B1%CF%87%CE%BF%CF%82.mp4" data-title="Βάτραχος">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%92%CE%AC%CF%84%CF%81%CE%B1%CF%87%CE%BF%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Βάτραχος</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%92%CE%BF%CF%85%CE%BD%CF%8C.mp4" data-title="Βουνό">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%92%CE%BF%CF%85%CE%BD%CF%8C.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Βουνό</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%92%CF%81%CE%BF%CF%87%CE%AE.mp4" data-title="Βροχή">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%92%CF%81%CE%BF%CF%87%CE%AE.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Βροχή</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%93%CE%AC%CF%84%CE%B1.mp4" data-title="Γάτα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%93%CE%AC%CF%84%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Γάτα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94%CE%AC%CF%83%CE%BF%CF%82.mp4" data-title="Δάσος">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94%CE%AC%CF%83%CE%BF%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δάσος</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94%CE%AD%CE%BD%CF%84%CF%81%CE%BF.mp4" data-title="Δέντρο">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94%CE%AD%CE%BD%CF%84%CF%81%CE%BF.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δέντρο</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94%CE%B5%CE%BA%CE%AD%CE%BC%CE%B2%CF%81%CE%B9%CE%BF%CF%82.mp4" data-title="Δεκέμβριος">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94%CE%B5%CE%BA%CE%AD%CE%BC%CE%B2%CF%81%CE%B9%CE%BF%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δεκέμβριος</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94%CE%B5%CE%BD%20%CE%B1%CF%81%CE%AD%CF%83%CE%B5%CE%B9.mp4" data-title="Δεν αρέσει">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94%CE%B5%CE%BD%20%CE%B1%CF%81%CE%AD%CF%83%CE%B5%CE%B9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δεν αρέσει</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94%CE%B5%CE%BD%20%CE%BA%CE%B1%CF%84%CE%B1%CE%BB%CE%B1%CE%B2%CE%B1%CE%AF%CE%BD%CF%89.mp4" data-title="Δεν καταλαβαίνω">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94%CE%B5%CE%BD%20%CE%BA%CE%B1%CF%84%CE%B1%CE%BB%CE%B1%CE%B2%CE%B1%CE%AF%CE%BD%CF%89.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δεν καταλαβαίνω</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94%CE%B5%CE%BD%20%CE%BC%CF%80%CE%BF%CF%81%CF%8E.mp4" data-title="Δεν μπορώ">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94%CE%B5%CE%BD%20%CE%BC%CF%80%CE%BF%CF%81%CF%8E.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δεν μπορώ</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94%CE%B5%CE%BD%20%CE%BE%CE%AD%CF%81%CF%89.mp4" data-title="Δεν ξέρω">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94%CE%B5%CE%BD%20%CE%BE%CE%AD%CF%81%CF%89.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δεν ξέρω</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%95%CE%B2%CE%B4%CE%BF%CE%BC%CE%AC%CE%B4%CE%B1.mp4" data-title="Εβδομάδα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%95%CE%B2%CE%B4%CE%BF%CE%BC%CE%AC%CE%B4%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Εβδομάδα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%95%CE%B3%CE%B3%CF%8C%CE%BD%CE%B9.mp4" data-title="Εγγόνι">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%95%CE%B3%CE%B3%CF%8C%CE%BD%CE%B9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Εγγόνι</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9F%20%CE%B1%CE%B4%CE%B5%CE%BB%CF%86%CF%8C%CF%82.mp4" data-title="Ο αδελφός">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9F%20%CE%B1%CE%B4%CE%B5%CE%BB%CF%86%CF%8C%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ο αδελφός</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9F%20%CE%B1%CE%BD%CE%B9%CF%88%CE%B9%CF%8C%CF%82.mp4" data-title="Ο ανιψιός">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9F%20%CE%B1%CE%BD%CE%B9%CF%88%CE%B9%CF%8C%CF%82.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ο ανιψιός</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A0%CE%BF%CF%84%CE%AC%CE%BC%CE%B9.mp4" data-title="Ποτάμι">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A0%CE%BF%CF%84%CE%AC%CE%BC%CE%B9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ποτάμι</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%B7%20%CE%B1%CE%BD%CE%B9%CF%88%CE%B9%CE%AC.mp4" data-title="η ανιψιά">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%B7%20%CE%B1%CE%BD%CE%B9%CF%88%CE%B9%CE%AC.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">η ανιψιά</span>
+        </button>
+        
+      </div>
+    </section>
+    
+    <section class="contents-module" id="module-9">
+      <header class="contents-module-header">
+        <h3>Unit 9: Useful Sentences</h3>
+        <span class="pill pill-muted">15 videos</span>
+      </header>
+
+      <div class="contents-thumb-grid">
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%88%CE%BD%CE%B1%CF%82%20%CF%87%CF%81%CF%8C%CE%BD%CE%BF%CF%82%20%CF%80%CF%8C%CF%83%CE%B5%CF%82%20%CE%B7%CE%BC%CE%AD%CF%81%CE%B5%CF%82%20%CE%AD%CF%87%CE%B5%CE%B9;.mp4" data-title="Ένας χρόνος πόσες ημέρες έχει;">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%88%CE%BD%CE%B1%CF%82%20%CF%87%CF%81%CF%8C%CE%BD%CE%BF%CF%82%20%CF%80%CF%8C%CF%83%CE%B5%CF%82%20%CE%B7%CE%BC%CE%AD%CF%81%CE%B5%CF%82%20%CE%AD%CF%87%CE%B5%CE%B9;.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ένας χρόνος πόσες ημέρες έχει;</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%88%CF%87%CF%89%20%CE%BF%CE%B9%CE%BA%CE%BF%CE%B3%CE%AD%CE%BD%CE%B5%CE%B9%CE%B1..mp4" data-title="Έχω οικογένεια.">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%88%CF%87%CF%89%20%CE%BF%CE%B9%CE%BA%CE%BF%CE%B3%CE%AD%CE%BD%CE%B5%CE%B9%CE%B1..jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Έχω οικογένεια.</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CF%85%CF%84%CF%8C%20%CF%84%CE%BF%20%CE%BA%CE%B1%CE%BB%CE%BF%CE%BA%CE%B1%CE%AF%CF%81%CE%B9%20%CE%B5%CE%AF%CE%BD%CE%B1%CE%B9%20%CF%83%CF%85%CE%BD%CE%BD%CE%B5%CF%86%CE%B9%CE%B1%CF%83%CE%BC%CE%AD%CE%BD%CE%BF..mp4" data-title="Αυτό το καλοκαίρι είναι συννεφιασμένο.">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CF%85%CF%84%CF%8C%20%CF%84%CE%BF%20%CE%BA%CE%B1%CE%BB%CE%BF%CE%BA%CE%B1%CE%AF%CF%81%CE%B9%20%CE%B5%CE%AF%CE%BD%CE%B1%CE%B9%20%CF%83%CF%85%CE%BD%CE%BD%CE%B5%CF%86%CE%B9%CE%B1%CF%83%CE%BC%CE%AD%CE%BD%CE%BF..jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Αυτό το καλοκαίρι είναι συννεφιασμένο.</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%91%CF%8D%CF%81%CE%B9%CE%BF%20%CE%B8%CE%B1%20%CE%AD%CF%87%CE%B5%CE%B9%20%CE%BA%CE%B1%CF%84%CE%B1%CE%B9%CE%B3%CE%AF%CE%B4%CE%B1.mp4" data-title="Αύριο θα έχει καταιγίδα">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%91%CF%8D%CF%81%CE%B9%CE%BF%20%CE%B8%CE%B1%20%CE%AD%CF%87%CE%B5%CE%B9%20%CE%BA%CE%B1%CF%84%CE%B1%CE%B9%CE%B3%CE%AF%CE%B4%CE%B1.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Αύριο θα έχει καταιγίδα</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%94%CE%BF%CF%85%CE%BB%CE%B5%CF%8D%CF%89%20%CE%94%CE%B5%CF%85%CF%84%CE%AD%CF%81%CE%B1.%20%CE%A4%CE%B5%CF%84%CE%AC%CF%81%CF%84%CE%B7.%20%CE%A0%CE%B1%CF%81%CE%B1%CF%83%CE%BA%CE%B5%CF%85%CE%AE%20%CE%BA%CE%B1%CE%B9%20%CE%A3%CE%AC%CE%B2%CE%B2%CE%B1%CF%84%CE%BF..mp4" data-title="Δουλεύω Δευτέρα. Τετάρτη. Παρασκευή και Σάββατο.">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%94%CE%BF%CF%85%CE%BB%CE%B5%CF%8D%CF%89%20%CE%94%CE%B5%CF%85%CF%84%CE%AD%CF%81%CE%B1.%20%CE%A4%CE%B5%CF%84%CE%AC%CF%81%CF%84%CE%B7.%20%CE%A0%CE%B1%CF%81%CE%B1%CF%83%CE%BA%CE%B5%CF%85%CE%AE%20%CE%BA%CE%B1%CE%B9%20%CE%A3%CE%AC%CE%B2%CE%B2%CE%B1%CF%84%CE%BF..jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Δουλεύω Δευτέρα. Τετάρτη. Παρασκευή και Σάββατο.</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%95%CE%AF%CE%BC%CE%B1%CE%B9%20%CE%BC%CE%BF%CE%BD%CE%B1%CF%87%CE%BF%CF%80%CE%B1%CE%AF%CE%B4%CE%B9..mp4" data-title="Είμαι μοναχοπαίδι.">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%95%CE%AF%CE%BC%CE%B1%CE%B9%20%CE%BC%CE%BF%CE%BD%CE%B1%CF%87%CE%BF%CF%80%CE%B1%CE%AF%CE%B4%CE%B9..jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Είμαι μοναχοπαίδι.</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%97%20%CE%B5%CE%B2%CE%B4%CE%BF%CE%BC%CE%AC%CE%B4%CE%B1%20%CE%AD%CF%87%CE%B5%CE%B9%207%20%CE%B7%CE%BC%CE%AD%CF%81%CE%B5%CF%82..mp4" data-title="Η εβδομάδα έχει 7 ημέρες.">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%97%20%CE%B5%CE%B2%CE%B4%CE%BF%CE%BC%CE%AC%CE%B4%CE%B1%20%CE%AD%CF%87%CE%B5%CE%B9%207%20%CE%B7%CE%BC%CE%AD%CF%81%CE%B5%CF%82..jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Η εβδομάδα έχει 7 ημέρες.</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%97%20%CE%BF%CE%BC%CE%AC%CE%B4%CE%B1%20%CE%B1%CF%85%CF%84%CE%AE%20%CE%AD%CF%87%CE%B5%CE%B9%20%CE%BC%CE%AC%CE%B8%CE%B7%CE%BC%CE%B1%20%CE%BA%CE%AC%CE%B8%CE%B5%20%CE%94%CE%B5%CF%85%CF%84%CE%AD%CF%81%CE%B1-%CE%A4%CE%B5%CF%84%CE%AC%CF%81%CF%84%CE%B7..mp4" data-title="Η ομάδα αυτή έχει μάθημα κάθε Δευτέρα-Τετάρτη.">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%97%20%CE%BF%CE%BC%CE%AC%CE%B4%CE%B1%20%CE%B1%CF%85%CF%84%CE%AE%20%CE%AD%CF%87%CE%B5%CE%B9%20%CE%BC%CE%AC%CE%B8%CE%B7%CE%BC%CE%B1%20%CE%BA%CE%AC%CE%B8%CE%B5%20%CE%94%CE%B5%CF%85%CF%84%CE%AD%CF%81%CE%B1-%CE%A4%CE%B5%CF%84%CE%AC%CF%81%CF%84%CE%B7..jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Η ομάδα αυτή έχει μάθημα κάθε Δευτέρα-Τετάρτη.</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%97%20%CE%BF%CE%BC%CE%AC%CE%B4%CE%B1%20%CE%B1%CF%85%CF%84%CE%AE%20%CE%AD%CF%87%CE%B5%CE%B9%20%CE%BC%CE%AC%CE%B8%CE%B7%CE%BC%CE%B1%20%CE%BA%CE%AC%CE%B8%CE%B5%20%CE%A4%CF%81%CE%AF%CF%84%CE%B7-%CE%A0%CE%AD%CE%BC%CF%80%CF%84%CE%B7..mp4" data-title="Η ομάδα αυτή έχει μάθημα κάθε Τρίτη-Πέμπτη.">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%97%20%CE%BF%CE%BC%CE%AC%CE%B4%CE%B1%20%CE%B1%CF%85%CF%84%CE%AE%20%CE%AD%CF%87%CE%B5%CE%B9%20%CE%BC%CE%AC%CE%B8%CE%B7%CE%BC%CE%B1%20%CE%BA%CE%AC%CE%B8%CE%B5%20%CE%A4%CF%81%CE%AF%CF%84%CE%B7-%CE%A0%CE%AD%CE%BC%CF%80%CF%84%CE%B7..jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Η ομάδα αυτή έχει μάθημα κάθε Τρίτη-Πέμπτη.</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%9F%20%CF%87%CF%81%CF%8C%CE%BD%CE%BF%CF%82%20%CF%80%CF%8C%CF%83%CE%BF%CF%85%CF%82%20%CE%BC%CE%AE%CE%BD%CE%B5%CF%82%20%CE%AD%CF%87%CE%B5%CE%B9;.mp4" data-title="Ο χρόνος πόσους μήνες έχει;">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%9F%20%CF%87%CF%81%CF%8C%CE%BD%CE%BF%CF%82%20%CF%80%CF%8C%CF%83%CE%BF%CF%85%CF%82%20%CE%BC%CE%AE%CE%BD%CE%B5%CF%82%20%CE%AD%CF%87%CE%B5%CE%B9;.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Ο χρόνος πόσους μήνες έχει;</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A0%CF%8C%CF%83%CE%B5%CF%82%20%CE%B5%CF%80%CE%BF%CF%87%CE%AD%CF%82%20%CE%AD%CF%87%CE%B5%CE%B9%20%CE%BF%20%CF%87%CF%81%CF%8C%CE%BD%CE%BF%CF%82;.mp4" data-title="Πόσες εποχές έχει ο χρόνος;">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A0%CF%8C%CF%83%CE%B5%CF%82%20%CE%B5%CF%80%CE%BF%CF%87%CE%AD%CF%82%20%CE%AD%CF%87%CE%B5%CE%B9%20%CE%BF%20%CF%87%CF%81%CF%8C%CE%BD%CE%BF%CF%82;.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Πόσες εποχές έχει ο χρόνος;</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A4%CE%B1%20%CE%A3%CE%B1%CE%B2%CE%B2%CE%B1%CF%84%CE%BF%CE%BA%CF%8D%CF%81%CE%B9%CE%B1%CE%BA%CE%B1%20%CF%80%CE%AC%CF%89%20%CE%B5%CE%BA%CE%B4%CF%81%CE%BF%CE%BC%CE%AE..mp4" data-title="Τα Σαββατοκύριακα πάω εκδρομή.">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A4%CE%B1%20%CE%A3%CE%B1%CE%B2%CE%B2%CE%B1%CF%84%CE%BF%CE%BA%CF%8D%CF%81%CE%B9%CE%B1%CE%BA%CE%B1%20%CF%80%CE%AC%CF%89%20%CE%B5%CE%BA%CE%B4%CF%81%CE%BF%CE%BC%CE%AE..jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Τα Σαββατοκύριακα πάω εκδρομή.</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A4%CE%B9%CF%82%20%CE%9A%CF%85%CF%81%CE%B9%CE%B1%CE%BA%CE%AD%CF%82%20%CF%84%CF%81%CF%8E%CE%BC%CE%B5%20%CE%AD%CE%BE%CF%89%20%CF%83%CE%B5%20%CF%84%CE%B1%CE%B2%CE%AD%CF%81%CE%BD%CE%B1..mp4" data-title="Τις Κυριακές τρώμε έξω σε ταβέρνα.">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A4%CE%B9%CF%82%20%CE%9A%CF%85%CF%81%CE%B9%CE%B1%CE%BA%CE%AD%CF%82%20%CF%84%CF%81%CF%8E%CE%BC%CE%B5%20%CE%AD%CE%BE%CF%89%20%CF%83%CE%B5%20%CF%84%CE%B1%CE%B2%CE%AD%CF%81%CE%BD%CE%B1..jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Τις Κυριακές τρώμε έξω σε ταβέρνα.</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A4%CE%B9%CF%82%20%CE%9A%CF%85%CF%81%CE%B9%CE%B1%CE%BA%CE%AD%CF%82%20%CF%84%CF%81%CF%8E%CE%BC%CE%B5%20%CF%83%CF%84%CE%BF%20%CF%83%CF%80%CE%AF%CF%84%CE%B9.mp4" data-title="Τις Κυριακές τρώμε στο σπίτι">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A4%CE%B9%CF%82%20%CE%9A%CF%85%CF%81%CE%B9%CE%B1%CE%BA%CE%AD%CF%82%20%CF%84%CF%81%CF%8E%CE%BC%CE%B5%20%CF%83%CF%84%CE%BF%20%CF%83%CF%80%CE%AF%CF%84%CE%B9.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Τις Κυριακές τρώμε στο σπίτι</span>
+        </button>
+        
+        <button type="button" class="contents-thumb" data-video-url="/static/vid/teacher-video-%CE%A4%CE%BF%20%CE%A3%CE%AC%CE%B2%CE%B2%CE%B1%CF%84%CE%BF%20%CF%80%CE%B7%CE%B3%CE%B1%CE%AF%CE%BD%CF%89%20%CF%83%CF%84%CE%BF%20super%20market.mp4" data-title="Το Σάββατο πηγαίνω στο super market">
+          <span class="contents-thumb-media" aria-hidden="true">
+            <img src="/static/thumbnails/%CE%A4%CE%BF%20%CE%A3%CE%AC%CE%B2%CE%B2%CE%B1%CF%84%CE%BF%20%CF%80%CE%B7%CE%B3%CE%B1%CE%AF%CE%BD%CF%89%20%CF%83%CF%84%CE%BF%20super%20market.jpg" alt="" loading="lazy" onerror="this.src='/static/img/default-thumbnail.svg'">
+          </span>
+          <span class="contents-thumb-title">Το Σάββατο πηγαίνω στο super market</span>
+        </button>
+        
+      </div>
+    </section>
+    
+  </section>
+  
+</article>
+
+    </main>
+    <footer class="container">
+      <small>VISTA-SL Project - Erasmus+ KA220-HED</small>
+    </footer>
+    <script>
+      (function() {
+        const key = 'vistatl-theme';
+        const root = document.documentElement;
+        function apply(theme) { root.setAttribute('data-theme', theme); localStorage.setItem(key, theme); }
+        const saved = localStorage.getItem(key);
+        if (saved) apply(saved);
+        document.addEventListener('DOMContentLoaded', function(){
+          const btn = document.getElementById('theme-toggle');
+          if (!btn) return;
+          const current = root.getAttribute('data-theme') || 'light';
+          btn.textContent = current === 'dark' ? '☀️' : '🌙';
+          btn.addEventListener('click', function(){
+            const next = (root.getAttribute('data-theme')==='dark') ? 'light' : 'dark';
+            apply(next);
+            btn.textContent = next === 'dark' ? '☀️' : '🌙';
+          });
+        });
+      })();
+    </script>
+    
+<script>
+  (function() {
+    const player = document.getElementById('videoPlayer');
+    const title = document.getElementById('videoTitle');
+    const preview = document.getElementById('contentsPreview');
+    if (!player || !title || !preview) return;
+    document.querySelectorAll('.contents-thumb').forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        const url = thumb.getAttribute('data-video-url');
+        const name = thumb.getAttribute('data-title');
+        if (!url) return;
+        player.src = url;
+        title.textContent = name || '';
+        player.play().catch(function() {});
+        preview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  })();
+</script>
+
+
+<script>mendeleyWebImporter = {
+  downloadPdfs(e,t) { return this._call('downloadPdfs', [e,t]); },
+  open() { return this._call('open', []); },
+  setLoginToken(e) { return this._call('setLoginToken', [e]); },
+  _call(methodName, methodArgs) {
+    const id = Math.random();
+    window.postMessage({ id, token: '0.7162357275183279', methodName, methodArgs }, 'https://vistasl.eelvex.net');
+    return new Promise(resolve => {
+      const listener = window.addEventListener('message', event => {
+        const data = event.data;
+        if (typeof data !== 'object' || !('result' in data) || data.id !== id) return;
+        window.removeEventListener('message', listener);
+        resolve(data.result);
+      });
+    });
+  }
+};</script></body></html>

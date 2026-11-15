@@ -1,0 +1,21 @@
+# Exclude git history
+.git
+.gitignore
+
+# Exclude python cache and environments
+__pycache__
+*.pyc
+.venv
+venv/
+env/
+
+# Exclude testing and simulation scripts
+test_*.py
+tests/
+simulate_*.py
+*.log
+
+# Exclude local environment secrets (these should be injected at runtime)
+.env
+local_backup.db
+frontend_simulate_key.json

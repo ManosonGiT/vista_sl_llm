@@ -10,7 +10,7 @@ CREDENTIALS_FILE = "frontend_simulate_key.json"
 def run_simulation(user_key="user_1"):
     # 1. Load Credentials
     if not os.path.exists(CREDENTIALS_FILE):
-        print(f"❌ Error: {CREDENTIALS_FILE} not found.")
+        print(f"Error: {CREDENTIALS_FILE} not found.")
         return
 
     with open(CREDENTIALS_FILE, 'r') as f:

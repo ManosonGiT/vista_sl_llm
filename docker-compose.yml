@@ -1,0 +1,45 @@
+services:
+  # 1. VISTA-SL Middleware Backend
+  vista-backend:
+    build: .
+    container_name: vista_middleware
+    runtime: runc
+    restart: always
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER:-lionakis}:${DB_PASS:-TempPass}@db:5432/${DB_NAME:-vista_db}
+      - PLATFORM_URL=https://vistasl.eelvex.net
+      - COACH_SECRET_KEY=${COACH_SECRET_KEY}
+      - LLM_MODEL=${LLM_MODEL:-groq/llama-3.1-8b-instant}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - TOGETHERAI_API_KEY=${TOGETHERAI_API_KEY}
+      - BACKUP_LLM_MODEL=${BACKUP_LLM_MODEL}
+      - BACKUP_LLM_API_KEY=${BACKUP_LLM_API_KEY}
+      - BACKUP_LLM_API_BASE=${BACKUP_LLM_API_BASE}
+      - RATE_LIMIT_REQUESTS=${RATE_LIMIT_REQUESTS}
+      - RATE_LIMIT_WINDOW=${RATE_LIMIT_WINDOW}
+    volumes:
+      - chroma_data:/app/chroma_data
+    depends_on:
+      - db
+
+  # 2. PostgreSQL Database
+  db:
+    image: postgres:15-alpine
+    container_name: vista_db
+    runtime: runc
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER:-lionakis}
+      POSTGRES_PASSWORD: ${DB_PASS:-TempPass}
+      POSTGRES_DB: ${DB_NAME:-vista_db}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    # ports:
+    #   - "${DB_PORT:-5432}:5432"
+
+volumes:
+  postgres_data:
+  chroma_data:
