@@ -1,67 +1,134 @@
-from flask import Flask, request, Response, stream_with_context
-from flask_cors import CORS
+from fastapi import FastAPI, HTTPException, Depends, Query
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
+from pydantic import BaseModel
+from sqlalchemy.orm import Session
 import json
-import sys
 
-# Import our helper modules
+# Local modules
+import database
 import llm_service
 import platform_connector
-from database import db_manager
+from keyframes.db_store import (
+    init_db as init_keyframe_db,
+    get_all_titles,
+    get_lesson,
+    get_next_lesson,
+    retrieve_from_db,
+    format_row_for_prompt,
+)
+from keyframes.local_rag import detect_question_lang
+from keyframes.guardrails import (
+    check_question_allowed,
+    GUARDRAIL_SYSTEM_INSTRUCTION,
+)
 
-app = Flask(__name__)
-CORS(app) # Allow connections from browsers
+app = FastAPI(title="VISTA-SL LLM Backend")
 
-@app.route('/chat', methods=['POST'])
-def chat_endpoint():
-    """
-    Main entry point. Receives User ID, Token, and Message.
-    Orchestrates RAG, DB, and LLM. Returns SSE Stream.
-    """
-    data = request.json
-    user_id = data.get('userId')
-    user_token = data.get('token')
-    message = data.get('message')
+# 1. Initialize DB on Startup
+@app.on_event("startup")
+def startup_event():
+    print("🔄 Application Starting: Initializing Databases...")
+    database.init_db()
+    init_keyframe_db()
+    print("✅ Databases Ready.")
 
-    print(f"\n📩 Incoming Request from: {user_id}")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-    # 1. Initialize DB & Get Thread Slug
-    db_manager.init_db()
-    slug = db_manager.get_thread_slug(user_id)
-    
+class ChatRequest(BaseModel):
+    userId: str
+    token: str = ""
+    message: str
+
+
+@app.get("/keyframes/{id_or_title}")
+async def get_lesson_keyframes(id_or_title: str):
+    """Retrieve stored keyframe & VLM important factors for a specific lesson ID or title."""
+    lid = int(id_or_title) if id_or_title.isdigit() else None
+    row = get_lesson(lesson_id=lid, title=None if lid else id_or_title)
+    if not row:
+        raise HTTPException(status_code=404, detail="Lesson not found")
+    return row
+
+
+@app.get("/next-game")
+async def get_next_game_info(
+    token: str = Query(default=""),
+    current_lesson_id: int | None = Query(default=None),
+):
+    """Retrieve the next recommended game/lesson and its keyframe VLM factors from the database."""
+    next_hint = None
+    if token:
+        _, next_hint = await platform_connector.fetch_user_progress_with_next(token)
+    if next_hint:
+        row = get_lesson(lesson_id=next_hint.get("lessonId"), title=next_hint.get("lessonTitle"))
+        if row:
+            return {"source": "platform_coach", "lesson": row}
+    row = get_next_lesson(current_lesson_id=current_lesson_id)
+    if not row:
+        raise HTTPException(status_code=404, detail="No next lesson found")
+    return {"source": "curriculum_sequence", "lesson": row}
+
+
+@app.post("/chat")
+async def chat_endpoint(request: ChatRequest, db: Session = Depends(database.get_db)):
+    print(f"📩 Request from: {request.userId}")
+
+    # A. Sign-Language-Only Topic Guardrail
+    known_titles = get_all_titles()
+    allowed, refusal_msg = check_question_allowed(request.message, known_titles=known_titles)
+    if not allowed:
+        print("   🛡️ Blocked off-topic / unsafe message via Guardrail.")
+        async def blocked_generator():
+            yield f"data: {json.dumps({'token': refusal_msg})}\n\n"
+            yield "data: [DONE]\n\n"
+        return StreamingResponse(blocked_generator(), media_type="text/event-stream")
+
+    # B. Thread Management
+    slug = database.get_thread_slug(db, request.userId)
     if not slug:
-        print(f"   🆕 Creating new thread for {user_id}...")
-        slug = llm_service.create_thread(user_id)
-        if slug:
-            db_manager.save_thread_slug(user_id, slug)
-        else:
-            return {"error": "Failed to create thread"}, 500
+        print("   🆕 Creating new thread...")
+        slug = await llm_service.create_thread(request.userId)
+        if not slug:
+            raise HTTPException(status_code=500, detail="Failed to create thread")
+        database.save_thread_slug(db, request.userId, slug)
     else:
         print(f"   📂 Using existing thread: {slug}")
-
-    # 2. RAG Context Injection
-    # We fetch this on the server side so the client doesn't need to know logic
-    print("   🧠 Fetching RAG Context...")
-    rag_context = platform_connector.get_rag_context(user_token)
     
-    # 3. Construct Final Prompt
-    final_prompt = f"{rag_context}\n\nUSER MESSAGE:\n{message}"
+    # C. RAG Context (Platform Progress + Database Signing Knowledge, no keyframe numbers)
+    print("   🧠 Fetching Context & Signing Knowledge from DB...")
+    q_lang = detect_question_lang(request.message)
+    user_stats, next_lesson = await platform_connector.fetch_user_progress_with_next(request.token)
+    db_matches = retrieve_from_db(request.message, k=3, next_lesson_hint=next_lesson)
+    signing_context = "\n---\n".join(format_row_for_prompt(m, lang=q_lang) for m in db_matches)
 
-    # 4. Stream Response (SSE Format)
-    def generate():
-        # Standard SSE format: "data: <content>\n\n"
-        for chunk in llm_service.stream_chat(slug, final_prompt):
-            # Wrap in JSON so the frontend can easily parse it
-            payload = json.dumps({"token": chunk})
-            yield f"data: {payload}\n\n"
-        
-        # Signal end of stream
+    lang_rule = (
+        "ΚΑΝΟΝΑΣ: Απάντησε ΑΠΟΚΛΕΙΣΤΙΚΑ στα ΕΛΛΗΝΙΚΑ. ΠΟΤΕ μην αναφέρεις τις λέξεις 'keyframe', 'καρέ', αριθμούς καρέ ή δευτερόλεπτα."
+        if q_lang == "el"
+        else "RULE: Reply in the EXACT same language as the USER MESSAGE. NEVER mention 'keyframes', frame numbers, or timestamps in your answer."
+    )
+
+    final_prompt = (
+        f"SYSTEM GUARDRAIL:\n{GUARDRAIL_SYSTEM_INSTRUCTION}\n{lang_rule}\n\n"
+        f"SYSTEM INJECTION (LEARNER PROGRESS):\n{user_stats}\n\n"
+        f"DATABASE SIGNING KNOWLEDGE:\n{signing_context}\n\n"
+        f"USER MESSAGE:\n{request.message}\n\n({lang_rule})"
+    )
+
+    # D. Stream Response
+    async def response_generator():
+        async for chunk in llm_service.stream_chat(slug, final_prompt):
+            data = json.dumps({"token": chunk})
+            yield f"data: {data}\n\n"
         yield "data: [DONE]\n\n"
 
-    print("   🚀 Streaming response to client...")
-    return Response(stream_with_context(generate()), mimetype='text/event-stream')
+    return StreamingResponse(response_generator(), media_type="text/event-stream")
 
-if __name__ == '__main__':
-    print("==========================================")
-    print("🌍 SERVER RUNNING ON http://localhost:5000")
-    print("==========================================")
-    app.run(port=5000, debug=True)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

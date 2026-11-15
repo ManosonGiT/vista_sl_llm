@@ -3,4 +3,10 @@
 *.db
 /database
 /all_lessons
-/__pycache__
+__pycache__/
+*.pyc
+keyframes/cache.json
+keyframes/videos/
+keyframes/frames/
+scratch/
+venv/
